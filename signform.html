@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iWeather - Sign in & Sign up</title>
+
+    <!-- Main CSS -->
+    <link  href="assets/css/sign_style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title sign_in">Sign in</div>
+            <div class="title sign_in">Sign up</div>
+        </div>
+
+        <div class="form-container">        
+            <div class="slide-controls">
+                <input type="radio" name="slider" id="login" checked>
+                <input type="radio" name="slider" id="signup">
+                <label for="login" class="slide login">Sign in</label>
+                <label for="signup" class="slide signup">Sign up</label>
+                <div class="slide-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form action="#" class="login">
+                    <div class="field">
+                        <input type="text" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="pass-link"><a href="#">Forgot password?</a></div>
+                    <div class="field">
+                        <input type="submit" value="Sign in">
+                    </div>
+                    <div class="signup-link">Not a member? <a href="#">Sign up now!</a></div>
+                </form>
+
+                <form action="#" class="sign-up">
+                    <div class="field">
+                        <input type="text" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="field">
+                        <input type="submit" value="Sign up">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const loginForm = document.querySelector("form.login");
+        const signupForm = document.querySelector("form.sign-up");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector(".signup-link a");
+        signupBtn.onclick = (() => {
+            loginForm.style.marginLeft = "-50%"
+        });
+
+        loginBtn.onclick = (() => {
+            loginForm.style.marginLeft = "0%"
+        });
+
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        });
+    </script>
+    </body>
+</html>
