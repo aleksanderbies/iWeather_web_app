@@ -11,6 +11,11 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+
+    <script src="assets/js/firebase_config.js"></script>
+    
 </head>
 <body>
     <div class="wrapper">
@@ -30,30 +35,30 @@
             <div class="form-inner">
                 <form action="#" class="login">
                     <div class="field">
-                        <input type="text" placeholder="Email Address" required>
+                        <input id ="login_email" type="text" placeholder="Email Address" required>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Password" required>
+                        <input id="login_passwd" type="password" placeholder="Password" required>
                     </div>
                     <div class="pass-link"><a href="#">Forgot password?</a></div>
                     <div class="field">
-                        <input type="submit" value="Sign in">
+                        <input type="submit" value="Sign in" onclick="signIn()">
                     </div>
                     <div class="signup-link">Not a member? <a href="#">Sign up now!</a></div>
                 </form>
 
                 <form action="#" class="sign-up">
                     <div class="field">
-                        <input type="text" placeholder="Email Address" required>
+                        <input id="signup_mail" type="text" placeholder="Email Address" required>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Password" required>
+                        <input id="passwd" type="password" placeholder="Password" required>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Confirm Password" required>
+                        <input id="confirmPasswd" type="password" placeholder="Confirm Password" required>
                     </div>
                     <div class="field">
-                        <input type="submit" value="Sign up">
+                        <input type="submit" value="Sign up" onclick="signUp()">
                     </div>
                 </form>
             </div>
