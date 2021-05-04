@@ -25,6 +25,12 @@
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+
+  <!-- jQuerry -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -121,7 +127,11 @@
 
     <!-- Location Weather -->
     <section id="location_weather" class="location_weather">
-
+      <div class="container">
+        <div class="location"><h1 id="cityName">Hello world!</h1></div>
+          <div class="weather_icon"> </div>
+          <div class="temperature"><p id="tempValue">-°<span>C</span></p></div>
+      </div>
     </section>
   </main>
 
@@ -173,4 +183,6 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+<script src="assets/js/fetch_weather.js"></script>
+<script src="assets/js/locate.js"></script>
 </html>

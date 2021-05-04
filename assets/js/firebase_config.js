@@ -20,7 +20,11 @@ function signIn(){
 
     const promise = auth.signInWithEmailAndPassword(email, password);
     promise.catch(e => alert(e.message));
-    alert("Signed in as " + email);
+
+
+    var nick = auth.currentUser;    
+    console.log(nick);
+    alert("Signed in as " + nick);
 }
 
 function signUp(){
