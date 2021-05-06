@@ -24,15 +24,13 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/weather.css" rel="stylesheet">
 
 
   <!-- jQuerry -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-
 </head>
-
 <body>
   
   <!-- Header and navbar -->
@@ -72,9 +70,56 @@
   <!-- Welcome board -->
   <section id="welcome" class="d-flex align-items-center">
     <div class="container">
-      <h1>iWeather</h1>
-      <h2>Your weather. Everytime. Everywhere.</h2>
-      <a href="signform.html" class="create-account scrollto">Create Account</a>
+      <div class="weatherLoc">       
+        <div class="location">
+          <div class="locationCity"><h1 id="cityName">Loading...</h1></div>
+              <div class="temperature">
+                <div class="value"><p id="tempValue">-°<span>C</span></p></div>
+              </div>
+          </div>
+          <div class="descIco">
+            <div class="weatherIcon" id="showIcon">
+              <img src="assets/img/weathericons/noweather.png" />
+            </div>
+            <div class="description">
+              <p id="descriptionW"> </p>
+            </div>
+        </div>
+      </div>
+      <div class="report">
+        <div class="feelTemp">
+          <div class="title">Feel</div>
+          <div class="value"><p id="feelTempValue">- °<span>C</span></p></div>
+        </div>
+        <div class="minTemp">
+          <div class="title">Min</div>
+          <div class="value"><p id="minTempValue">- °<span>C</span></p></div>
+        </div>
+        <div class="maxTemp">
+          <div class="title">Max</div>
+          <div class="value"><p id="maxTempValue">- °<span>C</span></p></div>
+        </div>
+        <div class="pressure">
+          <div class="title">Pressure</div>
+          <div class="value"><p id="pressValue">-<span> hPa</span></p></div>
+        </div>
+        <div class="humidity">
+          <div class="title">Humidity</div>
+          <div class="value"><p id="humidityValue">-<span> %</span></p></div>
+        </div>
+        <div class="wind">
+          <div class="title">Wind</div>
+          <div class="value"><p id="windValue">-<span> km/h</span></p></div>
+        </div>
+      </div>
+      <div class="more">
+        <div class="invitationText">
+          <p>Want to have more weather info?</p>
+        </div>
+        <div class="create-account-Btn">
+          <a href="signform.html" class="create-account scrollto">Create Account</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -122,15 +167,6 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Location Weather -->
-    <section id="location_weather" class="location_weather">
-      <div class="container">
-        <div class="location"><h1 id="cityName">Hello world!</h1></div>
-          <div class="weather_icon"> </div>
-          <div class="temperature"><p id="tempValue">-°<span>C</span></p></div>
       </div>
     </section>
   </main>

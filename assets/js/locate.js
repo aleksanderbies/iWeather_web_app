@@ -1,6 +1,13 @@
 const locationCity =  document.getElementById("cityName");
 const temperatureValue =  document.getElementById("tempValue");
-//const  =  document.querySelector(".temperature_value");
+const iconBox = document.getElementById("showIcon");
+const feelTemp = document.getElementById("feelTempValue");
+const minTemp = document.getElementById("minTempValue");
+const maxTemp = document.getElementById("maxTempValue");
+const pressureValue = document.getElementById("pressValue");
+const humidityValue = document.getElementById("humidityValue");
+const windValue = document.getElementById("windValue");
+const description = document.getElementById("descriptionW");
 
 var latitude, longitude;
 
@@ -18,11 +25,25 @@ navigator.geolocation.getCurrentPosition(function (position){
             console.log(data)
             var nameValue = data['name'];
             var tempValue = data['main']['temp'];
-            var descValue = data['weather'][0]['description'];
+            var iconCode = data['weather'][0]['icon'];
+            var weatherDescription = data['weather'][0]['description'];
+            var humidity = data['main']['humidity'];
+            var pressure = data['main']['pressure']
+            var feels = data['main']['feels_like'];
+            var tempMax = data['main']['temp_max'];
+            var tempMin = data['main']['temp_min'];
+            var wind = data['wind']['speed'];
             
-            console.log(nameValue);
+            console.log(wind);
             locationCity.innerHTML = nameValue;
-            temperatureValue.innerHTML = tempValue + `°<span>C</span>`;
-            //temperature.innerHTML = tempValue;
+            iconBox.innerHTML = `<img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" width="120px" />`;
+            temperatureValue.innerHTML = parseInt(tempValue) + ` °<span>C</span>`;
+            minTemp.innerHTML = parseInt(tempMin) + ` °<span>C</span>`;
+            maxTemp.innerHTML = parseInt(tempMax) + ` °<span>C</span>`;
+            feelTemp.innerHTML = parseInt(feels) + ` °<span>C</span>`;
+            pressureValue.innerHTML = parseInt(pressure) + `<span> hPa</span>`;
+            humidityValue.innerHTML = parseInt(humidity) + `<span> %</span>`;
+            windValue.innerHTML = parseInt(wind) + `<span> km/h</span>`;
+            description.innerHTML = weatherDescription;
         });
 });

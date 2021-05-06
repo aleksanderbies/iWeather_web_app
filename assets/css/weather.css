@@ -1,0 +1,53 @@
+.weatherLoc{
+    display: flex;
+}
+
+.report{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin:0 auto;
+    padding-top: 70px;
+}
+
+.temperature .value{
+    font-size: 80px;
+    font-weight: 600;
+    color: #2a5261;
+}
+
+.description p{
+    font-size: 25px;
+    font-weight: 600;
+    color: #2a5261;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 700;
+    color: #2a5261;
+}
+
+.value{
+    font-size: 20px;
+    font-weight: 500;
+    color: #2a5261;
+}
+
+@media (max-width: 1366px) {
+    .weatherLoc{
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .report{
+        display: block;
+    }
+
+    .feelTemp, .minTemp, .maxTemp, .pressure, .humidity, .wind{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
