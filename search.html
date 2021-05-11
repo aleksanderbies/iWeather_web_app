@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>iWeather - weather app</title>
+    <meta content="" name="description"> 
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap CSS files -->
+    <link href="assets/bootstrap_asset/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/weather.css" rel="stylesheet">
+
+
+    <!-- jQuerry -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Firebase script -->
+    <script src="assets/js/firebase_config.js"></script>
+
+</head>
+<body>
+    <!-- Header and navbar -->
+    <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+        <a href="index.html" class="logo me-auto"><img src="assets/img/logo_no_background.png" alt="" class="img-fluid"></a>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+            <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+            <li><a class="nav-link scrollto active" href="#">Today's weather</a></li>
+            <li><a class="nav-link scrollto" href="forecast.html">8-days Weather Forecast</a></li>
+            <li><a class="nav-link scrollto" href="favorites.html">Favorites</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <a href="signform.html" class="signin-btn scrollto" id="loginBtn"><span class="d-none d-md-inline"></span> Sign In</a>
+        <a onclick="" class="signin-btn scrollto" id="loginBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign out</a>
+
+    </div>
+    </header>
+    <!-- Weather board -->
+    <section id="welcome" class="d-flex align-items-center">
+        
+    <div class="container">
+        <div class="searcher">
+            <input type="text" class="inputValue" placeholder="City">
+            <input type="submit" value="Search" class="submit" id="searchWeather">
+        </div>
+        <div class="weatherLoc">       
+        <div class="location">
+            <div class="locationCity"><h1 id="cityName">Loading...</h1></div>
+                <div class="temperature">
+                <div class="value"><p id="tempValue">-°<span>C</span></p></div>
+                </div>
+            </div>
+            <div class="descIco">
+            <div class="weatherIcon" id="showIcon">
+                <img src="assets/img/weathericons/noweather.png" />
+            </div>
+            <div class="description">
+                <p id="descriptionW"> </p>
+            </div>
+        </div>
+        </div>
+        <div class="report">
+        <div class="feelTemp">
+            <div class="title">Feel</div>
+            <div class="value"><p id="feelTempValue">- °<span>C</span></p></div>
+        </div>
+        <div class="minTemp">
+            <div class="title">Min</div>
+            <div class="value"><p id="minTempValue">- °<span>C</span></p></div>
+        </div>
+        <div class="maxTemp">
+            <div class="title">Max</div>
+            <div class="value"><p id="maxTempValue">- °<span>C</span></p></div>
+        </div>
+        <div class="pressure">
+            <div class="title">Pressure</div>
+            <div class="value"><p id="pressValue">-<span> hPa</span></p></div>
+        </div>
+        <div class="humidity">
+            <div class="title">Humidity</div>
+            <div class="value"><p id="humidityValue">-<span> %</span></p></div>
+        </div>
+        <div class="wind">
+            <div class="title">Wind</div>
+            <div class="value"><p id="windValue">-<span> km/h</span></p></div>
+        </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    <!--  Footer -->
+    <footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+        <div class="row">
+            <h3>iWeather</h3>
+            <p>Copryright &copy; 2021 Aleksander Bies</p>
+        </div>
+        </div>
+    </div>
+    </footer>
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Bootstrap JS Files -->
+    <script src="assets/bootstrap_asset/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap_asset/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/bootstrap_asset/purecounter/purecounter.js"></script>
+    <script src="assets/bootstrap_asset/swiper/swiper-bundle.min.js"></script>
+
+    <!-- JS Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/fetch_weather.js"></script>
+</body>
+</html>

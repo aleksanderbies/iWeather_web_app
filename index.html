@@ -30,6 +30,9 @@
   <!-- jQuerry -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <!-- Firebase script -->
+  <script src="assets/js/firebase_config.js"></script>
+
 </head>
 <body>
   
@@ -37,37 +40,23 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <a href="index.html" class="logo me-auto"><img src="assets/img/logo_no_background.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#">Home</a></li>
-          <li><a class="nav-link scrollto" href="#">Weather in your city</a></li>
-          <li class="dropdown"><a href="#"><span>My Weather</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">AAAA</a></li>
-              <li class="dropdown"><a href="#"><span>aaaa</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">AAAA</a></li>
-                  <li><a href="#">AAAA</a></li>
-                  <li><a href="#">AAAA</a></li>
-                  <li><a href="#">AAAA</a></li>
-                  <li><a href="#">AAAA</a></li>
-                </ul>
-              </li>
-              <li><a href="#">AAAA</a></li>
-              <li><a href="#">AAAA</a></li>
-              <li><a href="#">AAAA</a></li>
-            </ul>
-          </li>
+          <li><a class="nav-link scrollto" href="search.html">Search</a></li>
+          <li><a class="nav-link scrollto" href="forecast.html">8-days Weather Forecast</a></li>
+          <li><a class="nav-link scrollto" href="favorites.html">Favorites</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <a href="signform.html" class="signin-btn scrollto" id="loginBtn"><span class="d-none d-md-inline"></span> Sign In</a>
+      <a onclick="" class="signin-btn scrollto" id="loginBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign out</a>
+
     </div>
   </header>
-
-  <!-- Welcome board -->
+  <!-- Weather board -->
   <section id="welcome" class="d-flex align-items-center">
     <div class="container">
       <div class="weatherLoc">       
@@ -122,85 +111,13 @@
       </div>
     </div>
   </section>
-
-  <main id="main">
-
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="content">
-              <h3>Why you have to choose our service?</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore molestiae blanditiis dolores neque voluptatibus sit iusto, vel, enim a veritatis voluptas distinctio at in harum reprehenderit sequi adipisci cupiditate.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-user"></i>
-                    <h4>Customize our service</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga in aspernatur nesciunt ipsam distinctio vitae rem, cumque modi molestiae repellendus quae. Quos cupiditate, corrupti eius id reiciendis iste dolorem!</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-message-square-error"></i>
-                    <h4>Weather alerts</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quas, magnam suscipit consequuntur maiores maxime placeat facere dolor odio nulla quo necessitatibus deserunt commodi, quidem veniam distinctio quis sint. Excepturi?</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-mobile-alt"></i>
-                    <h4>Mobile &amp; Desktop app</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolores? Molestiae harum adipisci voluptatibus cum consequuntur esse laudantium tenetur animi magni. Dolore impedit vel ad architecto adipisci doloribus maxime molestias!</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
   <!--  Footer -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-app">
             <h3>iWeather</h3>
-            <p>
-                Your weather. <br />
-                Everytime. <br />
-                Everywhere.
-            </p>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Mobile version</h4>
-            <ul>
-              <li><a href="#"><img src="assets/img/google-play-download-android-app.png" width="180px"></a></li>
-              <li><a href="#"><img src="assets/img/IOS-EN.png" width="180px"></a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Desktop version</h4>
-            <ul>
-              <li><a href="#"><img src="assets/img/apple.png" width="50px"></a></li>
-              <li><a href="#"><img src="assets/img/Windows_logo_2012-Black.png" width="50px"></a></li>
-            </ul>
-          </div>
+            <p>Copryright &copy; 2021 Aleksander Bies</p>
         </div>
       </div>
     </div>
@@ -219,6 +136,5 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-<script src="assets/js/fetch_weather.js"></script>
 <script src="assets/js/locate.js"></script>
 </html>

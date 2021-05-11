@@ -35,6 +35,37 @@
     color: #2a5261;
 }
 
+.searcher{
+    display: flex;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+.searcher .inputValue{
+    background: #2a5261;
+    height: 40px;
+    width: 300px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 3px;
+    color: #fff;
+    border: none
+}
+
+.searcher .submit{
+    background: #2a5261;
+    height: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 3px;
+    color: #fff;
+    border: none
+}
+
+.searcher .inputValue:focus, .searcher .submit:focus{
+    outline: none;
+}
+
 @media (max-width: 1366px) {
     .weatherLoc{
         margin-right: auto;
