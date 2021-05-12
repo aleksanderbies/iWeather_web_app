@@ -10,11 +10,16 @@ const windValue = document.getElementById("windValue");
 const description = document.getElementById("descriptionW");
 
 var searchWeatcher = document.getElementById("searchWeather");
+var eightDayForecast = document.getElementById("search8days");
 
 var APIkey = 'f6785dbf88aab1a3ecaba3da1633ee5f';
 
 searchWeatcher.addEventListener('click', function(){
         var cityName =  document.querySelector(".inputValue").value;
+
+        document.querySelector(".weatherLoc").style.visibility= "visible";
+        document.querySelector(".report").style.visibility= "visible";
+
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${APIkey}`)
             .then(response => response.json())
             .then(data => {

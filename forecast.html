@@ -30,6 +30,7 @@
     <!-- jQuerry -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
 
@@ -47,8 +48,8 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
             <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-            <li><a class="nav-link scrollto active" href="#">Today's weather</a></li>
-            <li><a class="nav-link scrollto" href="forecast.html">8-days Weather Forecast</a></li>
+            <li><a class="nav-link scrollto" href="search.html">Today's weather</a></li>
+            <li><a class="nav-link scrollto active" href="forecast.html">8-days Weather Forecast</a></li>
             <li><a class="nav-link scrollto" href="favorites.html">Favorites</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -64,7 +65,7 @@
     <div class="container">
         <div class="searcher">
             <input type="text" class="inputValue" placeholder="City">
-            <input type="submit" value="Search" class="submit" id="searchWeather">
+            <input type="submit" value="Search" class="submit" id="search8days">
         </div>
         <div class="weatherLoc" style="visibility: hidden;">       
         <div class="location">
@@ -83,29 +84,40 @@
         </div>
         </div>
         <div class="report" style="visibility: hidden;">
-        <div class="feelTemp">
-            <div class="title">Feel</div>
-            <div class="value"><p id="feelTempValue">- °<span>C</span></p></div>
+        <div class="day">
+            <div class="date" id="date0"></div>
+            <div id="icond0"><img src="assets/img/weathericons/noweather.png" /></div>
+            <div class="value"><p id="day0TempValue">- °<span>C</span></p></div>
         </div>
-        <div class="minTemp">
-            <div class="title">Min</div>
-            <div class="value"><p id="minTempValue">- °<span>C</span></p></div>
+        <div class="day">
+            <div class="date" id="date1"></div>
+            <div id="icond1"><img src="assets/img/weathericons/noweather.png" /></div>
+            <div class="value"><p id="day1TempValue">- °<span>C</span></p></div>
         </div>
-        <div class="maxTemp">
-            <div class="title">Max</div>
-            <div class="value"><p id="maxTempValue">- °<span>C</span></p></div>
+        <div class="day">
+            <div class="date" id="date2"></div> 
+            <div id="icond2"><img src="assets/img/weathericons/noweather.png" /></div>
+            <div class="value"><p id="day2TempValue">- °<span>C</span></p></div>
         </div>
-        <div class="pressure">
-            <div class="title">Pressure</div>
-            <div class="value"><p id="pressValue">-<span> hPa</span></p></div>
+        <div class="day">
+            <div class="date" id="date3"></div>
+            <div id="icond3"><img src="assets/img/weathericons/noweather.png" /></div>
+            <div class="value"><p id="day3TempValue">- °<span>C</span></p></div>
         </div>
-        <div class="humidity">
-            <div class="title">Humidity</div>
-            <div class="value"><p id="humidityValue">-<span> %</span></p></div>
+        <div class="day">
+            <div class="date" id="date4"></div>
+            <div id="icond4"><img src="assets/img/weathericons/noweather.png" /></div>
+            <div class="value"><p id="day4TempValue">- °<span>C</span></p></div>
         </div>
-        <div class="wind">
-            <div class="title">Wind</div>
-            <div class="value"><p id="windValue">-<span> km/h</span></p></div>
+        <div class="day">
+            <div class="date" id="date5"></div>
+            <div id="icond5"><img src="assets/img/weathericons/noweather.png" /></div>
+            <div class="value"><p id="day5TempValue">- °<span>C</span></p></div>
+        </div>
+        <div class="day">
+            <div class="date" id="date6"></div>
+            <div id="icond6"><img src="assets/img/weathericons/noweather.png" /></div>
+            <div class="value"><p id="day6TempValue">- °<span>C</span></p></div>
         </div>
         </div>
         </div>
@@ -134,6 +146,6 @@
 
     <!-- JS Files -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/fetch_weather.js"></script>
+    <script src="assets/js/forecast.js"></script>
 </body>
 </html>

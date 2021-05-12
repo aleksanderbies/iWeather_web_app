@@ -23,13 +23,15 @@
     color: #2a5261;
 }
 
-.title{
+.title, .date{
     font-size: 20px;
     font-weight: 700;
     color: #2a5261;
+    text-align: center;
 }
 
 .value{
+    text-align: center;
     font-size: 20px;
     font-weight: 500;
     color: #2a5261;
@@ -55,6 +57,7 @@
 .searcher .submit{
     background: #2a5261;
     height: 40px;
+    border-left-color: 1px solid #fff ;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 3px;
@@ -64,6 +67,13 @@
 
 .searcher .inputValue:focus, .searcher .submit:focus{
     outline: none;
+}
+
+.day{
+    border: 1px solid #2a5261;
+    border-bottom: 2px solid #2a5261;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 @media (max-width: 1366px) {
@@ -79,6 +89,32 @@
     .feelTemp, .minTemp, .maxTemp, .pressure, .humidity, .wind{
         display: flex;
         justify-content: space-between;
+    }
+
+    .searcher{
+        display: flex;
+        margin-bottom: 0;
+        padding-bottom: 20px;
+    }
+    .day{
+        border: 0;
+        border-top: 1px solid #2a5261;
+        border-radius: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .date{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .value p{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .day img{
+        max-height: 50px;
     }
 
 }
