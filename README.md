@@ -25,5 +25,5 @@ MIT
 
 ## See also
 
-* [iWeather app made in Flutter for Android and iOS mobile devices done by my colleague - Adam Chylaszek] (https://github.com/krygo-dev/iWeatherApp)
-* [iWeather desktop version made in C# for Windows done by my collegue - Adam Barczyk] (https://github.com/AdamBarczyk/iWeatherApp-)
+* <a href="https://github.com/krygo-dev/iWeatherApp"> iWeather app made in Flutter for Android and iOS mobile devices done by my colleague - Adam Chylaszek </a>
+* <a href="https://github.com/AdamBarczyk/iWeatherApp-"> iWeather desktop version made in C# for Windows done by my collegue - Adam Barczyk</a>
