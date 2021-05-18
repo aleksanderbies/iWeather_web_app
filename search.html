@@ -25,7 +25,7 @@
     <!-- Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" onload="this.media='all'">
     <link href="assets/css/weather.css" rel="stylesheet">
-
+    <link href="assets/css/loader.css" rel="stylesheet">
 
     <!-- jQuerry -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -35,31 +35,27 @@
 
     <!-- Firebase script -->
     <script src="assets/js/firebase_config.js"></script>
-
+    
 </head>
 <body>
     <!-- Header and navbar -->
-    <body>
-  
         <!-- Header and navbar -->
         <header id="header" class="fixed-top">
-          <div class="container d-flex align-items-center">
-      
+            <div class="container d-flex align-items-center">
             <a href="index.html" class="logo me-auto"><img src="assets/img/logo_no_background.png" alt="" class="img-fluid"></a>
-      
+
             <nav id="navbar" class="navbar order-last order-lg-0" style="visibility: hidden;">
-              <ul>
-                <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-                <li><a class="nav-link scrollto active" href="#">Today's weather</a></li>
-                <li><a class="nav-link scrollto" href="forecast.html">8-days Weather Forecast</a></li>
-                <li><a class="nav-link scrollto" href="favorites.html">Favorites</a></li>
-              </ul>
-              <i class="bi bi-list mobile-nav-toggle"></i>
+                <ul>
+                    <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="#">Today's weather</a></li>
+                    <li><a class="nav-link scrollto" href="forecast.html">8-days Weather Forecast</a></li>
+                    <li><a class="nav-link scrollto" href="favorites.html">Favorites</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
             <a class="signin-btn scrollto" id="logoutBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign out</a>
-      
             <a href="signform.html" class="signin-btn scrollto" id="loginBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign In</a>
-          </div>
+            </div>
         </header>
     <!-- Weather board -->
     <section id="welcome" class="d-flex align-items-center">
@@ -118,17 +114,27 @@
     <footer id="footer">
     <div class="footer-top">
         <div class="container">
-        <div class="row">
-            <h3>iWeather</h3>
-            <p>Copryright &copy; 2021 Aleksander Bies</p>
-        </div>
+            <div class="row">
+                <h3>iWeather</h3>
+                <p>Copryright &copy; 2021 Aleksander Bies</p>
+            </div>
         </div>
     </div>
     </footer>
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+    <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+    <script>
+        $(window).on("load", function(){
+            setTimeout(function(){
+            $(".loader").fadeOut("slow");
+        }, 2000);
+        });
+    </script>
     <!-- Bootstrap JS Files -->
     <script src="assets/bootstrap_asset/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/bootstrap_asset/glightbox/js/glightbox.min.js"></script>
