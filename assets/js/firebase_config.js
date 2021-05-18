@@ -13,17 +13,16 @@
 
 const auth = firebase.auth();
 
-function signIn(){
+async function signIn(){
     var email = document.getElementById("login_email").value;
     var password = document.getElementById("login_passwd").value;
 
-    const promise = auth.signInWithEmailAndPassword(email, password);
-    promise.catch(e => alert(e.message));
-
-    console.log(auth.currentUser)
+    const promise = await auth.signInWithEmailAndPassword(email, password);
+    
+    window.location.href = "./index.html";
 }
 
-function signUp(){
+async function signUp(){
     var email = document.getElementById("signup_mail").value;
     var password = document.getElementById("passwd").value;
     var retypedPassword = document.getElementById("confirmPasswd").value;
@@ -31,8 +30,8 @@ function signUp(){
     if (password.localeCompare(retypedPassword) == 1){
       alert("Please type the same passwords!");
     }else{
-    const promise = auth.createUserWithEmailAndPassword(email, password);
-    promise.catch(e => alert(e.message));
-    alert("Signed Up!");
+    const promise = await auth.createUserWithEmailAndPassword(email, password);
+    
+    location.reload();
     }
 }
