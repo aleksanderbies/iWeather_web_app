@@ -23,7 +23,7 @@
     <link href="assets/bootstrap_asset/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" onload="this.media='all'">
     <link href="assets/css/weather.css" rel="stylesheet">
 
 
@@ -39,25 +39,28 @@
 </head>
 <body>
     <!-- Header and navbar -->
-    <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-        <a href="index.html" class="logo me-auto"><img src="assets/img/logo_no_background.png" alt="" class="img-fluid"></a>
-
-        <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-            <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-            <li><a class="nav-link scrollto active" href="#">Today's weather</a></li>
-            <li><a class="nav-link scrollto" href="forecast.html">8-days Weather Forecast</a></li>
-            <li><a class="nav-link scrollto" href="favorites.html">Favorites</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <a href="signform.html" class="signin-btn scrollto" id="loginBtn"><span class="d-none d-md-inline"></span> Sign In</a>
-        <a onclick="" class="signin-btn scrollto" id="loginBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign out</a>
-
-    </div>
-    </header>
+    <body>
+  
+        <!-- Header and navbar -->
+        <header id="header" class="fixed-top">
+          <div class="container d-flex align-items-center">
+      
+            <a href="index.html" class="logo me-auto"><img src="assets/img/logo_no_background.png" alt="" class="img-fluid"></a>
+      
+            <nav id="navbar" class="navbar order-last order-lg-0" style="visibility: hidden;">
+              <ul>
+                <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+                <li><a class="nav-link scrollto active" href="#">Today's weather</a></li>
+                <li><a class="nav-link scrollto" href="forecast.html">8-days Weather Forecast</a></li>
+                <li><a class="nav-link scrollto" href="favorites.html">Favorites</a></li>
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <a class="signin-btn scrollto" id="logoutBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign out</a>
+      
+            <a href="signform.html" class="signin-btn scrollto" id="loginBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign In</a>
+          </div>
+        </header>
     <!-- Weather board -->
     <section id="welcome" class="d-flex align-items-center">
         
@@ -134,6 +137,7 @@
 
     <!-- JS Files -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/firebase_check.js" ></script>
     <script src="assets/js/fetch_weather.js"></script>
 </body>
 </html>

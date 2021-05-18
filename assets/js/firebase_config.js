@@ -1,4 +1,3 @@
-
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyA8jrAZWUWoSO2rIISo_YAvzxuGPhuumXk",
@@ -21,10 +20,7 @@ function signIn(){
     const promise = auth.signInWithEmailAndPassword(email, password);
     promise.catch(e => alert(e.message));
 
-
-    var nick = auth.currentUser;    
-    console.log(nick);
-    alert("Signed in as " + nick);
+    console.log(auth.currentUser)
 }
 
 function signUp(){
