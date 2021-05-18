@@ -2,6 +2,10 @@ var logoutBtn = document.getElementById("logoutBtn");
 
 logoutBtn.addEventListener('click', function(){
     auth.signOut();
+    document.getElementById("navbar").style.visibility= "visible";
+    document.getElementById("logoutBtn").style.visibility= "visible";
+    document.getElementById("loginBtn").style.visibility= "hidden";
+    window.location.href = "./index.html";
 });
 
 auth.onAuthStateChanged(firebaseUser => {
