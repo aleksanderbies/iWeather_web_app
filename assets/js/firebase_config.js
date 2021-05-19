@@ -13,8 +13,6 @@
 
 const auth = firebase.auth();
 
-console.log(auth.currentUser);
-
 async function signIn(){
     var email = document.getElementById("login_email").value;
     var password = document.getElementById("login_passwd").value;

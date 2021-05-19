@@ -2,7 +2,6 @@ var reportDiv = document.getElementById("report");
 var APIkey = 'f6785dbf88aab1a3ecaba3da1633ee5f';
 auth.onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
-
         firebase.database().ref(`${firebaseUser.uid}/favourites`).once('value', function(snapshot){
 
             let cities = snapshot.val();

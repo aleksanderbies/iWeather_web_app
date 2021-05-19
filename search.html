@@ -12,6 +12,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+    <!--Google icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- Bootstrap CSS files -->
     <link href="assets/bootstrap_asset/animate.css/animate.min.css" rel="stylesheet">
     <link href="assets/bootstrap_asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,6 +35,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
 
     <!-- Firebase script -->
     <script src="assets/js/firebase_config.js"></script>
@@ -63,7 +67,7 @@
     <div class="container">
         <div class="searcher">
             <input type="text" class="inputValue" placeholder="City">
-            <input type="submit" value="Search" class="submit" id="searchWeather">
+            <button type="submit" class="submit" id="searchWeather"><i class="material-icons" style="font-size: 35px;">search</i></button>
         </div>
         <div class="weatherLoc" style="visibility: hidden;">       
         <div class="location">
@@ -107,6 +111,8 @@
             <div class="value"><p id="windValue">-<span> km/h</span></p></div>
         </div>
         </div>
+        <div class="ic0N" id="fav" style="display: none;" onclick="deleteFromDB(this);"><i class="material-icons" style="size: 75px; ">favorite</i></div>
+        <div class="ic0N" id="notfav" style="display: none;" onclick="addToFav(this);"><i class="material-icons" style="size: 75px; ">favorite_border</i></div>
         </div>
     </div>
     </section>
@@ -147,5 +153,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/firebase_check.js" ></script>
     <script src="assets/js/fetch_weather.js"></script>
+    <script src="assets/js/db.js"></script>
 </body>
 </html>

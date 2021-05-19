@@ -12,6 +12,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+    <!--Google icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- Bootstrap CSS files -->
     <link href="assets/bootstrap_asset/animate.css/animate.min.css" rel="stylesheet">
     <link href="assets/bootstrap_asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,10 +33,10 @@
     <!-- jQuerry -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Firebase script -->    
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
-
-    <!-- Firebase script -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
     <script src="assets/js/firebase_config.js"></script>
 
 </head>
@@ -65,7 +68,7 @@
     <div class="container">
         <div class="searcher">
             <input type="text" class="inputValue" placeholder="City">
-            <input type="submit" value="Search" class="submit" id="search8days">
+            <button type="submit" class="submit" id="search8days"><i class="material-icons" style="font-size: 35px;">search</i></button>
         </div>
         <div class="weatherLoc" style="visibility: hidden;">       
         <div class="location">
@@ -119,7 +122,9 @@
             <div id="icond6"><img src="assets/img/weathericons/noweather.png" /></div>
             <div class="value"><p id="day6TempValue">- °<span>C</span></p></div>
         </div>
-        </div>
+        </div>        
+            <div class="ic0N" id="fav" style="display: none; margin-top: 20px;" onclick="deleteFromDB(this);"><i class="material-icons" style="size: 75px; ">favorite</i></div>
+            <div class="ic0N" id="notfav" style="display: none; margin-top: 20px;" onclick="addToFav(this);"><i class="material-icons" style="size: 75px; ">favorite_border</i></div>
         </div>
     </div>
     </section>
@@ -160,5 +165,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/firebase_check.js" ></script>
     <script src="assets/js/forecast.js"></script>
+    <script src="assets/js/db.js"></script>
 </body>
 </html>

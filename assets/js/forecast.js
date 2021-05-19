@@ -44,6 +44,7 @@ eightDayForecast.addEventListener('click', function(){
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${APIkey}`)
         .then(response => response.json())
         .then(data => {var nameValue = data['name'];
+            var cityid = data['id'];
             var tempValue = data['main']['temp'];
             var iconCode = data['weather'][0]['icon'];
             var weatherDescription = data['weather'][0]['description'];
@@ -113,11 +114,33 @@ eightDayForecast.addEventListener('click', function(){
                 day3TempValue.innerHTML = t4 + " °<span>C</span>";
                 day4TempValue.innerHTML = t5 + " °<span>C</span>";
                 day5TempValue.innerHTML = t6 + " °<span>C</span>";
-                day6TempValue.innerHTML = t7 + " °<span>C</span>";
+                day6TempValue.innerHTML = t7 + " °<span>C</span>"; 
+                
+                
+                document.getElementById('fav').setAttribute("name",`${cityid}`);
+                document.getElementById('notfav').setAttribute("name",`${cityid}`);
+                auth.onAuthStateChanged(firebaseUser => {
+                    if(firebaseUser){
+                        firebase.database().ref(`${firebaseUser.uid}/favourites`).once('value', function(snapshot){
+        
+                            let cities = snapshot.val();
+                            let x = Object.keys(cities);
+                            
+                            let n = x.includes(`${cityid}`);
+
+                                if(n){
+                                    console.log("hello!");
+                                    document.getElementById("fav").style.display="block";
+                                    document.getElementById("notfav").style.display="none";
+                                }else{
+                                    document.getElementById("fav").style.display="none";
+                                    document.getElementById("notfav").style.display="block";
+                                }
+                            });
+                        }
+                    });
+                });
             })
-            console.log(latitude);
-            console.log(longitude);
-        })
     .catch(err => alert("Wrong city name!"))
     
 

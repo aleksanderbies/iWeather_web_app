@@ -24,7 +24,7 @@ searchWeatcher.addEventListener('click', function(){
             .then(response => response.json())
             .then(data => {
 
-                console.log(data)
+                var cityid = data['id'];
                 var nameValue = data['name'];
                 var tempValue = data['main']['temp'];
                 var iconCode = data['weather'][0]['icon'];
@@ -36,7 +36,6 @@ searchWeatcher.addEventListener('click', function(){
                 var tempMin = data['main']['temp_min'];
                 var wind = data['wind']['speed'];
                 
-                console.log(wind);
                 locationCity.innerHTML = nameValue;
                 iconBox.innerHTML = `<img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" width="120px" />`;
                 temperatureValue.innerHTML = parseInt(tempValue) + ` °<span>C</span>`;
@@ -47,6 +46,31 @@ searchWeatcher.addEventListener('click', function(){
                 humidityValue.innerHTML = parseInt(humidity) + `<span> %</span>`;
                 windValue.innerHTML = parseInt(wind) + `<span> km/h</span>`;
                 description.innerHTML = weatherDescription;
+
+                document.getElementById('fav').setAttribute("name",`${cityid}`);
+                document.getElementById('notfav').setAttribute("name",`${cityid}`);
+
+                auth.onAuthStateChanged(firebaseUser => {
+                    if(firebaseUser){
+                        firebase.database().ref(`${firebaseUser.uid}/favourites`).once('value', function(snapshot){
+        
+                            let cities = snapshot.val();
+                            let x = Object.keys(cities);
+                            
+                            let n = x.includes(`${cityid}`);
+
+                            if(n){
+                                console.log("hello!");
+                                document.getElementById("fav").style.display="block";
+                                document.getElementById("notfav").style.display="none";
+                            }else{
+                                document.getElementById("fav").style.display="none";
+                                document.getElementById("notfav").style.display="block";
+                            }
+                        });
+                    }
+                });
             })
         .catch(err => alert("Wrong city name!"))
+
     });

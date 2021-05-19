@@ -116,6 +116,15 @@
       </div>
     </div>
   </section>
+  <script>
+  auth.onAuthStateChanged(firebaseUser => {
+      if(firebaseUser){
+          document.querySelector(".more").style.display= "none";
+      }else{
+        document.querySelector(".more").style.display= "flex";
+      }
+  });
+  </script>
   <!--  Footer -->
   <footer id="footer">
     <div class="footer-top">
