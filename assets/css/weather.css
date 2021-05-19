@@ -51,7 +51,7 @@
     border-bottom-left-radius: 10px;
     padding: 3px;
     color: #fff;
-    border: none
+    border: none;
 }
 
 .searcher .submit{
@@ -62,18 +62,39 @@
     border-bottom-right-radius: 10px;
     padding: 3px;
     color: #fff;
-    border: none
+    border: none;
 }
 
 .searcher .inputValue:focus, .searcher .submit:focus{
     outline: none;
 }
 
-.day, .city{
+.day{
     border: 1px solid #2a5261;
     border-bottom: 2px solid #2a5261;
     border-radius: 10px;
     padding: 10px;
+}
+
+.city{
+    min-width: 200px;
+    border: 1px solid #2a5261;
+    border-bottom: 2px solid #2a5261;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.ic0N img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ic0N i{
+    font-size: 40px;
+    color: #2a5261;
+    display: block;
+    text-align: center;
 }
 
 .details{

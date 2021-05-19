@@ -71,7 +71,6 @@ navigator.geolocation.getCurrentPosition(function (position){
             var tempMin = data['main']['temp_min'];
             var wind = data['wind']['speed'];
             
-            console.log(wind);
             locationCity.innerHTML = nameValue;
             iconBox.innerHTML = `<img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" width="120px" />`;
             temperatureValue.innerHTML = parseInt(tempValue) + ` °<span>C</span>`;
