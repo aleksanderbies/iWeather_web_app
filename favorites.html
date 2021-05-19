@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>iWeather - weather app</title>
+    <meta content="" name="description"> 
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap CSS files -->
+    <link href="assets/bootstrap_asset/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/bootstrap_asset/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/weather.css" rel="stylesheet">
+    <link href="assets/css/loader.css" rel="stylesheet">
+
+    <!-- jQuerry -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+
+    <!-- Firebase script -->
+    <script src="assets/js/firebase_config.js"></script>
+
+</head>
+<body>
+    <!-- Header and navbar -->
+    <header id="header" class="fixed-top">
+            <!-- Header and navbar -->
+            <header id="header" class="fixed-top">
+                <div class="container d-flex align-items-center">
+
+                <a href="index.html" class="logo me-auto"><img src="assets/img/logo_no_background.png" alt="" class="img-fluid"></a>
+                <nav id="navbar" class="navbar order-last order-lg-0" style="visibility: hidden;">
+                    <ul>
+                        <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+                        <li><a class="nav-link scrollto" href="search.html">Today's weather</a></li>
+                        <li><a class="nav-link scrollto" href="forecast.html">8-days Weather Forecast</a></li>
+                        <li><a class="nav-link scrollto active" href="#">Favorites</a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+                <a class="signin-btn scrollto" id="logoutBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign out</a>
+                <a href="signform.html" class="signin-btn scrollto" id="loginBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign In</a>
+            </div>
+        </header>
+    </header>
+    <!-- Weather board -->
+    <section id="welcome" class="d-flex align-items-center">
+        
+    <div class="container">
+        <div class="report">
+            <div class="city">
+                <div class="cityName" id="city0">Sharm El Sheikh</div>
+                <div id="icond0"><img src="assets/img/weathericons/noweather.png" /></div>
+                <div class="value"><p id="city0TempValue">- °<span>C</span></p></div>
+                <div class="details">
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Feel</div>
+                        <div class="detailsValue"><p id="city0FeelTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Min</div>
+                        <div class="detailsValue"><p id="city0MinTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Max</div>
+                        <div class="detailsValue"><p id="city0MaxTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Pressure</div>
+                        <div class="detailsValue"><p id="city0PressValue">- <span>hPa</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Humidity</div>
+                        <div class="detailsValue"><p id="city0HumValue">- <span>%</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Wind</div>
+                        <div class="detailsValue"><p id="city0WindValue">- <span>km/h</span></p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="city">
+                <div class="cityName" id="city1">Sharm El Sheikh</div>
+                <div id="icond1"><img src="assets/img/weathericons/noweather.png" /></div>
+                <div class="value"><p id="day1TempValue">- °<span>C</span></p></div>
+                <div class="details">
+                        <div class="weatherDetails">
+                            <div class="detailsTitle">Feel</div>
+                            <div class="detailsValue"><p id="city1FeelTempValue">- °<span>C</span></p></div>
+                        </div>
+                        <div class="weatherDetails">
+                            <div class="detailsTitle">Min</div>
+                            <div class="detailsValue"><p id="city1MinTempValue">- °<span>C</span></p></div>
+                        </div>
+                        <div class="weatherDetails">
+                            <div class="detailsTitle">Max</div>
+                            <div class="detailsValue"><p id="city1MaxTempValue">- °<span>C</span></p></div>
+                        </div>
+                        <div class="weatherDetails">
+                            <div class="detailsTitle">Pressure</div>
+                            <div class="detailsValue"><p id="city1PressValue">- <span>hPa</span></p></div>
+                        </div>
+                        <div class="weatherDetails">
+                            <div class="detailsTitle">Humidity</div>
+                            <div class="detailsValue"><p id="city1HumValue">- <span>%</span></p></div>
+                        </div>
+                        <div class="weatherDetails">
+                            <div class="detailsTitle">Wind</div>
+                            <div class="detailsValue"><p id="city1WindValue">- <span>km/h</span></p></div>
+                        </div>
+                    </div>
+                </div>
+            <div class="city">
+                <div class="cityName" id="city2">Sharm El Sheikh</div>
+                <div id="icond2"><img src="assets/img/weathericons/noweather.png" /></div>
+                <div class="value"><p id="day2TempValue">- °<span>C</span></p></div>
+                <div class="details">
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Feel</div>
+                        <div class="detailsValue"><p id="city2FeelTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Min</div>
+                        <div class="detailsValue"><p id="city2MinTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Max</div>
+                        <div class="detailsValue"><p id="city2MaxTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Pressure</div>
+                        <div class="detailsValue"><p id="city2PressValue">- <span>hPa</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Humidity</div>
+                        <div class="detailsValue"><p id="city2HumValue">- <span>%</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Wind</div>
+                        <div class="detailsValue"><p id="city2WindValue">- <span>km/h</span></p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="city">
+                <div class="cityName" id="city3">Sharm El Sheikh</div>
+                <div id="icond3"><img src="assets/img/weathericons/noweather.png" /></div>
+                <div class="value"><p id="day3TempValue">- °<span>C</span></p></div>
+                <div class="details">
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Feel</div>
+                        <div class="detailsValue"><p id="city3FeelTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Min</div>
+                        <div class="detailsValue"><p id="city3MinTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Max</div>
+                        <div class="detailsValue"><p id="city3MaxTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Pressure</div>
+                        <div class="detailsValue"><p id="city3PressValue">- <span>hPa</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Humidity</div>
+                        <div class="detailsValue"><p id="city3HumValue">- <span>%</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Wind</div>
+                        <div class="detailsValue"><p id="city3WindValue">- <span>km/h</span></p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="city">
+                <div class="cityName" id="city4">Sharm El Sheikh</div>
+                <div id="icond4"><img src="assets/img/weathericons/noweather.png" /></div>
+                <div class="value"><p id="day4TempValue">- °<span>C</span></p></div>
+                <div class="details">
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Feel</div>
+                        <div class="detailsValue"><p id="city4FeelTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Min</div>
+                        <div class="detailsValue"><p id="city4MinTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Max</div>
+                        <div class="detailsValue"><p id="city4MaxTempValue">- °<span>C</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Pressure</div>
+                        <div class="detailsValue"><p id="city4PressValue">- <span>hPa</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Humidity</div>
+                        <div class="detailsValue"><p id="city4HumValue">- <span>%</span></p></div>
+                    </div>
+                    <div class="weatherDetails">
+                        <div class="detailsTitle">Wind</div>
+                        <div class="detailsValue"><p id="city4WindValue">- <span>km/h</span></p></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!--  Footer -->
+    <footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+        <div class="row">
+            <h3>iWeather</h3>
+            <p>Copryright &copy; 2021 Aleksander Bies</p>
+        </div>
+        </div>
+    </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div> 
+        <script>
+        $(window).on("load", function(){
+            setTimeout(function(){
+            $(".loader").fadeOut("slow");
+            }, 2000);
+        });
+        </script>
+
+    <!-- Bootstrap JS Files -->
+    <script src="assets/bootstrap_asset/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap_asset/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/bootstrap_asset/purecounter/purecounter.js"></script>
+    <script src="assets/bootstrap_asset/swiper/swiper-bundle.min.js"></script>
+
+    <!-- JS Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/firebase_check.js" ></script>
+    <script src="assets/js/forecast.js"></script>
+</body>
+</html>
