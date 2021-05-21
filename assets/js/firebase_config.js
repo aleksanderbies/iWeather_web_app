@@ -17,9 +17,12 @@ async function signIn(){
     var email = document.getElementById("login_email").value;
     var password = document.getElementById("login_passwd").value;
 
-    const promise = await auth.signInWithEmailAndPassword(email, password);
-    
-    window.location.href = "./index.html";
+    try{
+      const promise = await auth.signInWithEmailAndPassword(email, password);
+      window.location.href = "./index.html";
+    }catch (error){
+      alert(error.message);
+    }
 }
 
 async function signUp(){
@@ -30,8 +33,20 @@ async function signUp(){
     if (password.localeCompare(retypedPassword) == 1){
       alert("Please type the same passwords!");
     }else{
-    const promise = await auth.createUserWithEmailAndPassword(email, password);
-    
-    location.reload();
+      try{
+          const promise = await auth.createUserWithEmailAndPassword(email, password);
+          let uid = promise.user.uid;
+          let umail = promise.user.email;
+
+          firebase.database().ref(`${uid}`).set({
+            email: `${umail}`,
+            uid: `${uid}`
+          });
+
+          location.reload();
+
+      }catch (error){
+        alert(error.message);
+      }
     }
 }

@@ -121,26 +121,33 @@ eightDayForecast.addEventListener('click', function(){
                 document.getElementById('notfav').setAttribute("name",`${cityid}`);
                 auth.onAuthStateChanged(firebaseUser => {
                     if(firebaseUser){
-                        firebase.database().ref(`${firebaseUser.uid}/favourites`).once('value', function(snapshot){
+                        firebase.database().ref(`${firebaseUser.uid}`).once('value', function(snapshot){
+                            if (snapshot.hasChild("favourites")){
+                                console.log("true");
+                                firebase.database().ref(`${firebaseUser.uid}/favourites`).once('value', function(snapshot){
         
-                            let cities = snapshot.val();
-                            let x = Object.keys(cities);
-                            
-                            let n = x.includes(`${cityid}`);
-
-                                if(n){
-                                    console.log("hello!");
-                                    document.getElementById("fav").style.display="block";
-                                    document.getElementById("notfav").style.display="none";
-                                }else{
-                                    document.getElementById("fav").style.display="none";
-                                    document.getElementById("notfav").style.display="block";
-                                }
-                            });
-                        }
-                    });
+                                    let cities = snapshot.val();
+                                    let x = Object.keys(cities);
+                                    
+                                    let n = x.includes(`${cityid}`);
+        
+                                    if(n){
+                                        document.getElementById("fav").style.display="block";
+                                        document.getElementById("notfav").style.display="none";
+                                    }else{
+                                        document.getElementById("fav").style.display="none";
+                                        document.getElementById("notfav").style.display="block";
+                                    }
+                                });
+                            }else{
+                                document.getElementById("fav").style.display="none";
+                                document.getElementById("notfav").style.display="block";
+                            }
+                        });
+                    }
                 });
-            })
+            });
+        })
     .catch(err => alert("Wrong city name!"))
     
 
