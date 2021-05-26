@@ -8,6 +8,7 @@ const pressureValue = document.getElementById("pressValue");
 const humidityValue = document.getElementById("humidityValue");
 const windValue = document.getElementById("windValue");
 const description = document.getElementById("descriptionW");
+const loader = document.querySelector(".loader");
 
 var searchWeatcher = document.getElementById("searchWeather");
 var eightDayForecast = document.getElementById("search8days");
@@ -15,6 +16,12 @@ var eightDayForecast = document.getElementById("search8days");
 var APIkey = 'f6785dbf88aab1a3ecaba3da1633ee5f';
 
 searchWeatcher.addEventListener('click', function(){
+
+        loader.style.display = "flex";
+        setTimeout(function(){
+        $(loader).fadeOut("slow");
+        }, 2000);
+
         var cityName =  document.querySelector(".inputValue").value;
 
         document.querySelector(".weatherLoc").style.visibility= "visible";
@@ -50,6 +57,7 @@ searchWeatcher.addEventListener('click', function(){
                 document.getElementById('fav').setAttribute("name",`${cityid}`);
                 document.getElementById('notfav').setAttribute("name",`${cityid}`);
 
+                document.querySelector(".inputValue").value = "";
                 auth.onAuthStateChanged(firebaseUser => {
                     if(firebaseUser){
                         firebase.database().ref(`${firebaseUser.uid}`).once('value', function(snapshot){

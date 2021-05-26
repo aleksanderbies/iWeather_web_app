@@ -59,7 +59,7 @@
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav>
                 <a class="signin-btn scrollto" id="logoutBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign out</a>
-                <a href="signform.html" class="signin-btn scrollto" id="loginBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign In</a>
+                <a href="signform.html?#" class="signin-btn scrollto" id="loginBtn" style="visibility: hidden;"><span class="d-none d-md-inline"></span> Sign In</a>
             </div>
         </header>
     </header>
@@ -96,6 +96,14 @@
             setTimeout(function(){
             $(".loader").fadeOut("slow");
             }, 2000);
+        });
+
+        auth.onAuthStateChanged(firebaseUser => {
+            if(firebaseUser){
+
+            }else{
+                window.location.href = "index.html";
+            }
         });
         </script>
 

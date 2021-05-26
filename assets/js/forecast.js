@@ -31,11 +31,19 @@ const day6TempValue = document.getElementById("day6TempValue");
 var searchWeatcher = document.getElementById("searchWeather");
 var eightDayForecast = document.getElementById("search8days");
 
+const loader = document.querySelector(".loader");
+
 var APIkey = 'f6785dbf88aab1a3ecaba3da1633ee5f';
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 eightDayForecast.addEventListener('click', function(){
+
+    loader.style.display = "flex";
+    setTimeout(function(){
+    $(loader).fadeOut("slow");
+    }, 2000);
+
     var cityName =  document.querySelector(".inputValue").value;
     
     document.querySelector(".weatherLoc").style.visibility= "visible";
@@ -116,6 +124,7 @@ eightDayForecast.addEventListener('click', function(){
                 day5TempValue.innerHTML = t6 + " °<span>C</span>";
                 day6TempValue.innerHTML = t7 + " °<span>C</span>"; 
                 
+                document.querySelector(".inputValue").value = "";
                 
                 document.getElementById('fav').setAttribute("name",`${cityid}`);
                 document.getElementById('notfav').setAttribute("name",`${cityid}`);

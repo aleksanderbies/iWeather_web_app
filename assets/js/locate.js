@@ -8,6 +8,7 @@ const pressureValue = document.getElementById("pressValue");
 const humidityValue = document.getElementById("humidityValue");
 const windValue = document.getElementById("windValue");
 const description = document.getElementById("descriptionW");
+const loader = document.querySelector(".loader");
 
 var latitude;
 var longitude;
@@ -54,6 +55,11 @@ fetch(`https://restcountries.eu/rest/v2/alpha/${country_code}`)
 navigator.geolocation.getCurrentPosition(function (position){
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
+
+    loader.style.display = "flex";
+    setTimeout(function(){
+    $(loader).fadeOut("slow");
+    }, 2500);
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${APIkey}`)
         .then(response => response.json())

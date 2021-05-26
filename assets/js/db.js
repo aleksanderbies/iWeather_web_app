@@ -35,18 +35,17 @@ function addToFav(item){
                         let cities = snapshot.val();
                         x = Object.keys(cities).length;
                         if(x<5){
-                            firebase.database().ref(`${firebaseUser.uid}`).child('favourites').child(`${cityCode}`).update({
+                            firebase.database().ref(`${firebaseUser.uid}`).child('favourites').child(`${cityCode}`).set({
                                 id: cityCode,
                                 name: `${cityName}`
                             });
                             document.getElementById("fav").style.display="block";
                             document.getElementById("notfav").style.display="none";
-                        }else{
-                            alert("You cannot have more than five favorites cities!");
+                            stop();
                         }
                     });
                 }else{
-                    firebase.database().ref(`${firebaseUser.uid}`).child('favourites').child(`${cityCode}`).update({
+                    firebase.database().ref(`${firebaseUser.uid}`).child('favourites').child(`${cityCode}`).set({
                         id: cityCode,
                         name: `${cityName}`
                     });

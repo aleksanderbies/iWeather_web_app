@@ -143,7 +143,19 @@
         display: flex;
         justify-content: space-between;
     }
-    .date{
+    .city{
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .cityName, #icond0, .value{
+        display: flex;
+        justify-content: space-between;
+    }
+    .cityName{
+        width: 100px;
+    }
+    .date, .cityName, .value, .ic0N{
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -157,9 +169,6 @@
         max-height: 50px;
     }
 
-    .city{
-        margin-bottom: 10px;
-    }
 
     .details{
         display: none;

@@ -50,3 +50,19 @@ async function signUp(){
       }
     }
 }
+
+function resetPassword(){
+  var email = document.getElementById("forgot_email").value;
+  if (email != ""){
+    auth.sendPasswordResetEmail(email).then(function(){
+      alert("Email has been sent to you! Please check and verify.");
+      window.location.href = "./signform.html?#";
+    })
+    .catch(function(error){
+      var errorMess = error.message;
+      alert(errorMess);
+    });
+  }else{
+    alert("Please type your email!");
+  }
+}
