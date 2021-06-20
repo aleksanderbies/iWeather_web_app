@@ -1,6 +1,6 @@
 # iWeather web app
 
-Web Weather app with Firebase connection
+Weather API web app with Firebase DB and authentication.
 
 ## Technologies
 
